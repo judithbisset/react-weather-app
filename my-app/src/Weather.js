@@ -122,7 +122,7 @@ export default function Weather() {
                     </div>
 
                     <br />
-                    <p id="git-hub"><a id="git-hub-link" href="https://github.com/judithbisset/weather-app" target="_blank" rel="noreferrer">Open-source
+                    <p id="git-hub"><a id="git-hub-link" href="https://github.com/judithbisset/react-weather-app" target="_blank" rel="noreferrer">Open-source
           code</a> by Judith Maier Bisset
         <br />
                         <span id="artwork">Artwork by Elizabeth Bisset</span>
