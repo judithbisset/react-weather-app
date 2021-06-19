@@ -1,24 +1,46 @@
-import React from "react";
+
+import React, { useState } from "react";
+import WeatherInfo from "./WeatherInfo";
+
 
 import "./styles.css";
+import axios from "axios";
 
-export default function Weather() {
-    let weatherData = {
-        city: "Cheddar",
-        date: "24/05/2021",
-        description: "Clear",
-        temperature: 7,
-        humidity: 66,
-        wind: 3
-    };
+export default function Weather(props) {
+    const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
+    function handleResponse(response) {
+    setWeatherData({
+      ready: true,
+      coordinates: response.data.coord,
+      temperature: response.data.main.temp,
+      humidity: response.data.main.humidity,
+      date: new Date(response.data.dt * 1000),
+      description: response.data.weather[0].description,
+      wind: response.data.wind.speed,
+      city: response.data.name,
+    });
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
+  function search() {
+    const apiKey = "14851b7f540a88c1c818c45b5f539543";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+   if (weatherData.ready) {
     return (
         <div className="Weather">
-            <div className="container">
-                <div className="card" id="weather-app">
-                    <div className="card-body">
-                        <p>Weather with Cheddar</p>
-
-                        <br />
+            
+                        
                         <form className="search">
                             <div className="row">
                                 <div className="col-4">
@@ -28,108 +50,33 @@ export default function Weather() {
                                         placeholder="Enter a city"
                                         aria-label="city"
                                         id="city-input"
-                                        autoComplete="off"
+                                        autoFocus="on"
+                                        onChange={handleCityChange}
                                     />
                                 </div>
 
                                 <div className="col-3">
-                                    <button type="submit" className="btn btn-primary">
-                                        Search
-                  </button>
-                                </div>
-                                <div className="col-3">
-                                    <button className="btn btn-primary">
-                                        📌
-                  </button>
+                                    <button type="submit" className="btn btn-primary">Search</button>
                                 </div>
                             </div>
                         </form>
-                        <br />
-                        <div className="row">
-                            <div className="col-6">
-                                <div className="clearfix weather-temperature">
-                                    <div className="card" id="basic-info">
-                                        <div className="card-body" id="current-weather">
-                                            <ul className="weather-info">
-                                                <li>
-                                                    <h1 className="card-title">{weatherData.city}</h1>
-                                                </li>
-                                                <li>
-                                                    Last updated: {weatherData.date}{" "}
-                                                    <span id="date"></span>
-                                                </li>
-
-                                                <li>
-                                                    <p>
-                                                        <span id="description">
-                                                            {weatherData.description}
-                                                        </span>
-                                                    </p>
-                                                </li>
-                                                <li
-                                                    id="temperature-design"
-                                                    className="d-flex justify-content-center"
-                                                >
-                                                    <img
-                                                        src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
-                                                        alt="Clear"
-                                                        id="icon"
-                                                        className="float-left"
-                                                    />
-                                                    <span id="degree">{weatherData.temperature} </span>
-                                                    <span>
-                                                        <a href="/" id="celsius" className="active">
-                                                            °C{" "}
-                                                        </a>
-                                                    </span>
-                                                    <span>
-                                                        <a href="/" id="fahrenheit">
-                                                            |°F{" "}
-                                                        </a>
-                                                    </span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div id="extra-information-weather">
-                                            <ul id="extra-weather-info">
-                                                <li>
-                                                    Humidity:{" "}
-                                                    <span id="humidity">{weatherData.humidity}</span>%
-                        </li>
-                                                <li>
-                                                    Wind: <span id="wind">{weatherData.wind}</span> km/h
-                        </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-sm-6">
-                                <div className="card" id="image-style">
-                                    <div className="card-body" id="cheddar-image">
-                                        <div className="image">
-
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <br />
-
-                        <div className="weather-forecast"></div>
-                    </div>
-
-                    <br />
-                    <p id="git-hub"><a id="git-hub-link" href="https://github.com/judithbisset/react-weather-app" target="_blank" rel="noreferrer">Open-source
+                        <WeatherInfo data={weatherData} />
+                        <div className="github">
+          <p id="git-hub"><a id="git-hub-link" href="https://github.com/judithbisset/react-weather-app" target="_blank" rel="noreferrer">Open-source
           code</a> by Judith Maier Bisset
         <br />
                         <span id="artwork">Artwork by Elizabeth Bisset</span>
                     </p>
-
-                </div>
-            </div>
-        </div>
+      </div>
+                        
+        
+      </div>
+      
     );
+    } else {
+    
+    return(
+        <div className="loading">Loading...</div>
+    );
+  }
 }
