@@ -12,7 +12,7 @@ function App() {
       <div className="container">
 
 
-      <Weather />
+      <Weather defaultCity="Cheddar" />
       </div>
 
     </div>
