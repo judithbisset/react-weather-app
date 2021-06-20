@@ -8,190 +8,59 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  padding: 16px;
 }
 
-#weather-app {
-  margin-top: 40px;
-  margin-bottom: 40px;
-  margin-left: 0;
-  margin-right: 0;
-  max-width: 900px;
-  width: 600px;
-  border: none;
-  background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(5px);
-
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 20px;
-  box-shadow: 10px 10px 20px 6px rgba(0, 0, 0, 0.3);
+.Weather h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 100;
+  margin: 20px 0 0 0;
+  line-height: 29px;
 }
 
-#cheddar {
-  font-weight: bold;
-  font-size: 20px;
-  border: 3px #4a5c8e solid;
-  width: fit-content;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  text-align: center;
-  margin: 0 auto;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 20px;
-  box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
-}
-
-h1,
-p {
-  text-align: center;
-  font-family: "Oswald", sans-serif;
-}
-form {
-  border: white;
-  color: white;
-}
-.fa-sun {
-  font-size: 20px;
-  color: yellow;
-}
-p {
-  font-size: 20px;
-}
-
-#icon {
-  width: 80px;
-  display: inline;
-  position: relative;
-  vertical-align: middle;
-  padding-right: 0;
+.Weather ul {
   margin: 0;
+  padding: 0;
 }
-.card-title {
-  font-size: 25px;
+
+.Weather li {
+  font-size: 16px;
   font-weight: bold;
-}
-#date {
-  font-size: 15px;
-}
-
-.row {
-  text-align: center;
-  font-family: "Oswald", sans-serif;
-}
-#icon-setting {
-  padding-bottom: 0;
-}
-#degree {
-  font-size: 64px;
-  line-height: 1;
-
-  font-weight: 400;
-  margin: 0;
-  display: inline;
-}
-li {
-  text-align: center;
-}
-#celsius,
-#fahrenheit {
-  position: relative;
-  font-size: 20px;
-
-  text-decoration: none;
-}
-.active {
-  color: black;
-  cursor: default;
-}
-.active:hover {
-  text-decoration: none;
-}
-ul {
-  text-decoration: none;
+  line-height: 19px;
   list-style: none;
 }
-#extra-information-weather {
-  padding: 0;
-  margin: 0;
-}
-.weather-info {
-  padding: 0;
-}
 
-#image {
-  width: 275px;
-  display: block;
-  text-align: center;
-  margin: 0 auto;
-  border-radius: 40px;
-  border: none;
-}
-#current-weather,
-#cheddar-image,
-#forecast {
-  padding: 0;
-  margin: 0;
-  border: none;
-  font-size: 15px;
-  font-weight: bolder;
-}
-#basic-info {
-  border-radius: 30px;
-  background-color: transparent;
-  border: none;
-}
-#forecast {
-  width: 650px;
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-}
-#image-style {
-  border: none;
-  background-color: transparent;
-  padding-right: 0;
-  padding-left: 0;
-}
-.weather-forecast {
+.Weather .temperature {
   font-weight: bold;
-  color: black;
-}
-.btn-primary {
-  color: #4a5c8e;
-  background-color: white;
-  font-family: "Oswald", sans-serif;
-}
-.form-control {
-  font-family: "Oswald", sans-serif;
-}
-.search {
-  border-radius: 10px;
-}
-#location {
-  color: #5dc2e0;
-  background-color: white;
-  font-size: 20px;
-  border-radius: 10px;
+  color: rgb(33, 33, 33);
+  font-size: 64px;
+  line-height: 64px;
+  margin-left: 15px;
+  font-weight: 400;
 }
 
-a {
-  text-decoration: none;
+.Weather canvas {
+  margin: 10px auto;
 }
-#git-hub {
+
+.Weather .unit {
+  color: rgb(33, 33, 33);
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+  line-height: 1;
+  top: -34px;
+}
+
+.Weather .github {
   font-size: 20px;
-  color: black;
+  color: white;
   text-decoration: none;
+  padding: 0 auto;
 }
-#git-hub-link {
-  text-decoration: underline;
-  color: black;
-  font-size: 20px;
-}
-#artwork {
-  font-size: 15px;
+
+.Weather .WeatherInfo {
+  padding: 0;
+  margin: 0 auto;
 }

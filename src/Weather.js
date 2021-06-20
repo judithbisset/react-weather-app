@@ -61,11 +61,12 @@ function handleResponse(response) {
             </div>
             </form>
             <WeatherInfo data={weatherData} />
+            <br />
             <div className="github">
-         <p id="git-hub"><a id="git-hub-link" href="https://github.com/judithbisset/react-weather-app" target="_blank" rel="noreferrer">Open-source
+         <p><a href="https://github.com/judithbisset/react-weather-app" target="_blank" rel="noreferrer">Open-source
          code</a> by Judith Maier Bisset
        <br />
-                       <span id="artwork">Artwork by Elizabeth Bisset</span>
+                       <span>Artwork by Elizabeth Bisset</span>
                    </p>
      </div>
 
