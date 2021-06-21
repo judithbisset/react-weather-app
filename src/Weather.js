@@ -1,6 +1,7 @@
 
 import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
 import "./styles.css";
 
@@ -61,6 +62,7 @@ function handleResponse(response) {
             </div>
             </form>
             <WeatherInfo data={weatherData} />
+            <WeatherForecast />
             <br />
             <div className="github">
          <p><a href="https://github.com/judithbisset/react-weather-app" target="_blank" rel="noreferrer">Open-source
