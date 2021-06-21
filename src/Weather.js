@@ -13,6 +13,7 @@ function handleResponse(response) {
     setWeatherData({
       ready: true,
       temperature: response.data.main.temp,
+      coordinates: response.data.coord,
       humidity: response.data.main.humidity,
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
@@ -62,7 +63,7 @@ function handleResponse(response) {
             </div>
             </form>
             <WeatherInfo data={weatherData} />
-            <WeatherForecast />
+            <WeatherForecast coordinates={weatherData.coordinates} />
             <br />
             <div className="github">
          <p><a href="https://github.com/judithbisset/react-weather-app" target="_blank" rel="noreferrer">Open-source
