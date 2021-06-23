@@ -64,14 +64,7 @@ function handleResponse(response) {
             </form>
             <WeatherInfo data={weatherData} />
             <WeatherForecast coordinates={weatherData.coordinates} />
-            <br />
-            <div className="github">
-         <p><a href="https://github.com/judithbisset/react-weather-app" target="_blank" rel="noreferrer">Open-source
-         code</a> by Judith Maier Bisset
-       <br />
-                       <span>Artwork by Elizabeth Bisset</span>
-                   </p>
-     </div>
+            
 
             </div>
             

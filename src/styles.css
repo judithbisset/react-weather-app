@@ -1,14 +1,15 @@
 /* CSS which you need for blurred box */
 .Weather {
-  background: url(./liz.jpeg) no-repeat;
+  background: url(./jo.jpeg) no-repeat;
   /* Keep the inherited background full size. */
   background-attachment: fixed;
   background-size: cover;
   display: grid;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 80vh;
   padding: 16px;
+  border-radius: 4px;
 }
 
 .Weather h1 {
