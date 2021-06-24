@@ -8,6 +8,7 @@ import "./styles.css";
 export default function WeatherInfo(props) {
   return (
     <div className="WeatherInfo">
+        
       <h1>{props.data.city}</h1>
       <ul>
         <li>
@@ -19,14 +20,20 @@ export default function WeatherInfo(props) {
       </ul>
        <div className="row">
         <div className="col-6">
-          <div className="clearfix">
+          <div className="d-flex">
             <div className="float-left">
               <WeatherIcon code={props.data.icon} size={52}/>
+             
+                <div className="float-left">
+              <WeatherTemperature celsius={props.data.temperature} />
+              
+              </div>
+              </div>
             </div>
 
-            <div className="float-left">
-              <WeatherTemperature celsius={props.data.temperature} />
-            </div>
+            
+              
+        
           </div>
         </div>
         <div className="col-6">
@@ -36,7 +43,7 @@ export default function WeatherInfo(props) {
           </ul>
         </div>
       </div>
-      </div>
+     
     
   );
 }
