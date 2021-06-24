@@ -12,7 +12,7 @@ function App() {
       <div className="container">
 
 
-      <Weather defaultCity="Cheddar" />
+      <Weather defaultCity="Innsbruck" />
       <footer>
           This project was coded by{" "}
           <a href="https://www.linkedin.com/in/judith-maier-bisset-4943b198/" target="_blank" rel="noreferrer">
